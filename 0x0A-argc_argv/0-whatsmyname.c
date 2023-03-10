@@ -9,12 +9,13 @@
  * Return: Always 0 (success)
  */
 
-int main(int argc, char *argv[])
+
+int main(int argc __attribute__((unused)), char *argv[])
+
 {
 
-	(void) argv; /*Ignore argv*/
-
-	printf("%d\n", argc - 1);
+	printf("%s\n", *argv);
 
 	return (0);
+
 }
