@@ -35,7 +35,7 @@ int parse_int(char *str)
 		{
 			print_error();
 		}
-		result = result * 10 + (*str - '0');
+		result = result * 10 + (*str - 0);
 		str++;
 	}
 	return (result);
