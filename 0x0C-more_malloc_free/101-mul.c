@@ -43,11 +43,10 @@ int parse_int(char *str)
 
 /**
  * multiply - multiplies two integers
+ * @num1: the first integer
+ * @num2: the second integer
  *
- * @num1: first num
- * @num2: second num
- *
- * Return: result of multiplication
+ * Return: the result of multiplying num1 and num2
  */
 
 int multiply(int num1, int num2)
@@ -77,7 +76,7 @@ int main(int argc, char **argv)
 	}
 	num1 = parse_int(argv[1]);
 	num2 = parse_int(argv[2]);
-	result = mul(num1, num2);
+	result = multiply(num1, num2);
 
 	printf("%d\n", result);
 	return (0);
