@@ -52,6 +52,9 @@ int parse_int(char *str)
 
 int multiply(int num1, int num2)
 {
+	int num1;
+	int num1;
+
 	return (num1 * num2);
 }
 
