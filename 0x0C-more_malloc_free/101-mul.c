@@ -35,7 +35,7 @@ int parse_int(char *str)
 		{
 			print_error();
 		}
-		result = result * 10 + (*str - 0);
+		result = result * 10 + (*str - '0');
 		str++;
 	}
 	return (result);
@@ -67,9 +67,9 @@ int multiply(int num1, int num2)
 
 int main(int argc, char **argv)
 {
-	int num1;
-	int num2;
-	int result;
+	long int num1;
+	long int num2;
+	long int result;
 
 	if (argc != 3)
 	{
@@ -79,6 +79,6 @@ int main(int argc, char **argv)
 	num2 = parse_int(argv[2]);
 	result = multiply(num1, num2);
 
-	printf("%d\n", result);
+	printf("%ld\n", result);
 	return (0);
 }
