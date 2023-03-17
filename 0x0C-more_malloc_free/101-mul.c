@@ -67,9 +67,9 @@ int multiply(int num1, int num2)
 
 int main(int argc, char **argv)
 {
-	long int num1;
-	long int num2;
-	long int result;
+	int num1;
+	int num2;
+	int result;
 
 	if (argc != 3)
 	{
@@ -79,6 +79,6 @@ int main(int argc, char **argv)
 	num2 = parse_int(argv[2]);
 	result = multiply(num1, num2);
 
-	printf("%ld\n", result);
+	printf("%d\n", result);
 	return (0);
 }
