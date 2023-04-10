@@ -11,31 +11,32 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	FILE *fp;
-	size_t len;
+	int fd, nwritten;
 
-	if (filename == NULL || text_content == NULL)
+	if (!filename)
 	{
-		errno = EINVAL;
 		return (-1);
 	}
 
-	len = strlen(text_content);
-	
-	fp = fopen(filename, "w");
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-	if (fp == NULL)
+	if (fd == -1)
 	{
-		perror("Error opening file");
 		return (-1);
 	}
 
-	if (fwrite(text_content, sizeof(char), len, fp) != len)
+	if (!text_content)
 	{
-		perror("Error writing to file");
-		fclose(fp);
+		text_content = "";
+	}
+
+	nwritten = write(fd, text_content, strlen(text_content));
+
+	if (nwritten == -1)
+	{
+		close(fd);
 		return (-1);
 	}
-	fclose(fp);
-	return (0);
+	close(fd);
+	return (1);
 }
