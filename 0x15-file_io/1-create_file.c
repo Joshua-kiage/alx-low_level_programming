@@ -1,5 +1,7 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
+#include <errno.h>
 
 /**
  * create_file - creates a file with the given name
